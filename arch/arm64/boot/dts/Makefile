@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0
+ifeq ($(CONFIG_ARCH_QCOM),)
 dts-dirs += actions
 dts-dirs += al
 dts-dirs += allwinner
@@ -15,7 +16,6 @@ dts-dirs += hisilicon
 dts-dirs += marvell
 dts-dirs += mediatek
 dts-dirs += nvidia
-dts-dirs += qcom
 dts-dirs += realtek
 dts-dirs += renesas
 dts-dirs += rockchip
@@ -24,6 +24,9 @@ dts-dirs += sprd
 dts-dirs += xilinx
 dts-dirs += lg
 dts-dirs += zte
+else
+dts-dirs += qcom
+endif # ARCH_QCOM
 
 subdir-y	:= $(dts-dirs)
 
